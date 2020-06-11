@@ -3,7 +3,6 @@
 #include <vector>
 #include <string>
 #include <fstream>
-#include <numeric>
 #include <algorithm>
 
 class Process {
