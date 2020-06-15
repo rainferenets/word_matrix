@@ -10,7 +10,7 @@ cmake .. && make
 Old iterative solution can be build also directly using `g++` as follows:
 ```
 cd src
-g++ word_matrix_ite.cpp process_ite.cpp -o word_matrix_ite
+g++ -O2 -Wall -std=c++11 word_matrix_ite.cpp process_ite.cpp -o word_matrix_ite
 ```
 
 New recursive solution can be build as follows:
