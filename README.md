@@ -1,70 +1,73 @@
 ## Building
 
-Project can be built using `cmake` in the root directory as follows:
+Whole project can be built using `cmake` in the root directory as follows:
 ```
 mkdir build
 cd build
 cmake .. && make
 ```
 
-It can be build also directly using `g++` as follows:
+Old iterative solution can be build also directly using `g++` as follows:
 ```
 cd src
-g++ -O2 -Wall *.cpp -o word_matrix
+g++ word_matrix_ite.cpp process_ite.cpp -o word_matrix_ite
+```
+
+New reursive solution can be build as follows:
+```
+cd src
+g++ -O2 -Wall -std=c++11 word_matrix_rec.cpp process_rec.cpp process.cpp -o word_matrix_rec
 ```
 
 ## Usage
 ```
-./word_matrix path_to_text_file
+./word_matrix_rec path_to_text_file
 ```
 
 ### Example
 An example with the included sample data file. Program is built using `g++` version `9.3.0` in Ubuntu 20.04.
 ```
-./word_matrix ../data/text_file
+./word_matrix_rec ../data/text_file_short
 ```
 
 Program output to console:
 ```
-Input file name: '../data/text_file'
+Input file name: '../data/text_file_short'
 
-Accepted length words, used as input:
+Accepted length words (<=10), used as input:
 ==========
-Dog1
-Camel1
-Falcon1
-Deer1
-Dog2
-Camel2
-Falcon2
-Deer2
-Dog3
-Camel3
-Falcon3
-Deer3
-Aaa
-Bb
-C
+Vanasadama
+Trassitee
+Samaks
+Kuni
+Kesklinna
+Gonsiori
+Mida
+Lahkneb
+Gonsiori
+Keskendume
+Ja
+Ka
+Nii
 ==========
 
-Too long words, skipped from input:
+Too long words (>10), skipped from input:
 ==========
-Chinchilla1
-Chinchilla2
-Chinchilla3
+Lennujaamast
+Olemasolevast
 ==========
 
-Output matrix:
+Output matrix (10x10):
 ==========
 ++++++++++
-++++++++++
-Deer3+++++
-Falcon3+++
-Falcon2BbC
-Dog3Camel3
-Dog2Camel2
-Deer1Deer2
-Falcon1Aaa
-Dog1Camel1
+Mida++++++
+Kesklinna+
+Trassitee+
+SamaksKuni
+LahknebNii
+GonsioriKa
+GonsioriJa
+Keskendume
+Vanasadama
 ==========
 ```
