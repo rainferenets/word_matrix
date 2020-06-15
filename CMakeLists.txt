@@ -21,4 +21,5 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
         "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
 endif()
 
-add_executable(word_matrix src/main.cpp src/process.cpp)
+add_executable(word_matrix_ite src/word_matrix_ite.cpp src/process_ite.cpp)
+add_executable(word_matrix_rec src/word_matrix_rec.cpp src/process.cpp src/process_rec.cpp)
