@@ -13,7 +13,7 @@ cd src
 g++ word_matrix_ite.cpp process_ite.cpp -o word_matrix_ite
 ```
 
-New reursive solution can be build as follows:
+New recursive solution can be build as follows:
 ```
 cd src
 g++ -O2 -Wall -std=c++11 word_matrix_rec.cpp process_rec.cpp process.cpp -o word_matrix_rec
